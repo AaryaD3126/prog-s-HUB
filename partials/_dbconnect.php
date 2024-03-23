@@ -7,7 +7,7 @@ die ("<h2>Access Denied!</h2> This file is protected and not available to public
 <?php
 $server = "localhost";
 $username = "root";
-$password = "root123";
+$password = "";
 $database = "forum_website";
 
 $connection = mysqli_connect($server, $username, $password, $database);
