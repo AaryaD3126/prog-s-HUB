@@ -86,6 +86,7 @@ session_start();
 </head>
 
 <body>
+    
     <?php include "partials/_dbconnect.php" ?>
     <?php include "partials/_header.php" ?>
     <?PHP

@@ -1,123 +1,82 @@
-/* Custom CSS for Prog's HUB */
 
-/* Global Styles */
-body {
-    font-family: 'Chivo Mono', monospace;
-    background-color: #f8f9fa;
-    color: #333;
-}
-
-/* Header Styles */
-header {
-    background-color: #343a40;
+#btn-back-to-top {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    background-color: blueviolet;
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-/* Services Section Styles */
-#services {
-    background-color: #fff;
-    padding: 50px 0;
-}
-
-.service-item {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f8f9fa;
-    transition: all 0.3s ease;
-}
-
-.service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.service-item i {
-    color: #007bff;
-}
-
-.service-item h3 {
-    margin-top: 20px;
-    font-size: 1.5rem;
-}
-
-.service-item p {
-    font-size: 1.1rem;
-}
-
-/* Discussion/Forums Section Styles */
-.container {
-    padding: 50px 0;
-}
-
-.card {
     border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+}
+
+#btn-back-to-top:hover {
+    background-color: darkviolet;
+}
+
+/* Card container */
+.row {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Gap between grid items */
+}
+
+/* Card styling */
+.card-container{
+    width: 100%;
+}
+.card {
+    background-color: #343a40;
+    width: 100%;
+    color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card-img-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.card h5 {
+    color: #17a2b8;
+    margin-bottom: 10px;
 }
 
-.card-title {
-    font-size: 1.5rem;
-    margin-top: 10px;
+.card p {
+    margin-bottom: 20px;
 }
 
-.card-text {
-    font-size: 1.1rem;
+/* Additional background elements */
+body {
+    background-color: #f8f9fa; /* Light background color */
 }
 
-/* Footer Styles */
-footer {
-    background-color: #343a40;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation ease 1s forwards;
 }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
     }
-
-    header p {
-        font-size: 1rem;
-    }
-
-    .service-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .service-item p {
-        font-size: 1rem;
-    }
-
-    .card-title {
-        font-size: 1.2rem;
-    }
-
-    .card-text {
-        font-size: 1rem;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
