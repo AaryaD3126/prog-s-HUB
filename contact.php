@@ -37,32 +37,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
   <?php include "partials/_dbconnect.php" ?>
   <?php include "partials/_header.php" ?>
-<!-- Wrapper container -->
 <h1><center><b>Contact us</b></center></h1>
 <div style="padding:25px;border-radius:20px;" class="container my-4 bg-light">
 
-  <!-- Bootstrap 5 starter form -->
   <form action="contact.php" method="post" id="contactForm">
 
-    <!-- Name input -->
     <div class="mb-3">
       <label class="form-label" for="name">Name</label>
       <input class="form-control" name="name" id="name" type="text" placeholder="Name" />
     </div>
 
-    <!-- Email address input -->
     <div class="mb-3">
       <label class="form-label" for="emailAddress">Email Address</label>
       <input class="form-control" name="emailAddress" id="emailAddress" type="email" placeholder="Email Address" />
     </div>
 
-    <!-- Message input -->
     <div class="mb-3">
       <label class="form-label" for="message">Message</label>
       <textarea class="form-control" name="message" id="message" type="text" placeholder="Message" style="height: 10rem;"></textarea>
     </div>
 
-    <!-- Form submit button -->
     <div class="d-grid">
       <button style="width:100px;" class="btn btn-primary btn-lg" type="submit">Submit</button>
     </div>
@@ -71,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 </div>
 
-  <?php include "partials/_footer.php" ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

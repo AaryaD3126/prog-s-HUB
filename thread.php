@@ -1,7 +1,33 @@
 <?php
 session_start();
 
+include 'partials/_dbconnect.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    if (isset($_POST['comment']) && !empty($_POST['comment'])) {
+        $comment = mysqli_real_escape_string($connection, $_POST['comment']);
+        $thread_id = $_GET['thread_id'];
+        $comment_by = $_SESSION["username"];
+        $user_img = $_SESSION['profile'];
+        $sql = "INSERT INTO comments (thread_id, comment_by, comment_content, user_img, ctime) 
+        VALUES ('$thread_id', '$comment_by', '$comment', '$user_img', NOW())";
+        $result = mysqli_query($connection, $sql);
+
+        if ($result) {
+            header("Location: {$_SERVER['PHP_SELF']}?thread_id=$thread_id");
+            exit();
+        } else {
+            echo '<script>alert("server error");</script>';
+            echo '<script>window.location = "../index.php";</script>';
+        }
+    } else {
+        echo "<script>comment cannot be emptied</script>";
+    }
+}
 ?>
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -15,141 +41,8 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Chivo Mono', monospace;
-        }
+    <link rel="stylesheet" href="assets/css/thread.css">
 
-        .jumbotron-custom {
-            background-color: #343a40;
-            color: #fff;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .jumbotron-custom h3,
-        .jumbotron-custom h5 {
-            color: #17a2b8;
-        }
-
-        .jumbotron-custom p {
-            font-size: 18px;
-        }
-
-        .rules {
-            margin-top: 20px;
-        }
-
-        .rules ol {
-            padding-left: 20px;
-        }
-
-        .rules ol li {
-            font-size: 16px;
-        }
-
-        .comment-container {
-            margin-top: 20px;
-        }
-
-        .comment-card {
-            background-color: lightgrey;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .comment-header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-
-        .comment-header img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .comment-content {
-            font-size: 17px;
-            word-break: break-all;
-        }
-
-        .pagination-container {
-            margin-top: 20px;
-        }
-
-        .pagination {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    background: linear-gradient(to right, #4CAF50, #008CBA); /* Gradient background */
-    padding: 10px;
-    border-radius: 20px; /* Rounded corners */
-}
-
-.page-item {
-    margin: 0 5px;
-}
-
-.page-link {
-    padding: 8px 16px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent background on hover */
-
-}
-
-
-
-.page-link:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.page-link.active {
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent background for active page */
-}
-
-/* Animation effect */
-.page-item {
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Triangle effect */
-.triangle-pagination::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid white; /* Triangle pointing upwards */
-}
-
-    </style>
 </head>
 
 <body>
@@ -255,7 +148,7 @@ if ($number_of_result > 0) {
     <ul class="pagination pagination-lg triangle-pagination">';
 
     for ($page = 1; $page <= $number_of_page; $page++) {
-        echo '<li class="page-item"><a class="page-link" href= "./thread_list.php?catid=' . $id . '&page=' . $page . '">' . $page . ' </a></li>';
+        echo '<li class="page-item"><a class="page-link" href= "./thread.php?thread_id=' . $id . '&page=' . $page . '">' . $page . ' </a></li>';
     }
     
     echo '</ul>
@@ -266,7 +159,6 @@ if ($number_of_result > 0) {
         </div>
     </div>
 
-    <?php include "partials/_footer.php" ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

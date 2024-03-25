@@ -135,9 +135,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     display: flex;
     justify-content: center;
     list-style: none;
-    background: linear-gradient(to right, #4CAF50, #008CBA); /* Gradient background */
+    background: linear-gradient(to right, #4CAF50, #008CBA);
     padding: 10px;
-    border-radius: 20px; /* Rounded corners */
+    border-radius: 20px;
 }
 
 .page-item {
@@ -151,7 +151,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent background on hover */
+    background-color: rgba(255, 255, 255, 0.2); 
 
 }
 
@@ -163,10 +163,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 }
 
 .page-link.active {
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent background for active page */
+    background-color: rgba(255, 255, 255, 0.2); 
 }
 
-/* Animation effect */
 .page-item {
     animation: fadeInUp 0.5s ease forwards;
     opacity: 0;
@@ -183,7 +182,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     }
 }
 
-/* Triangle effect */
 .triangle-pagination::before {
     content: '';
     position: absolute;
@@ -193,7 +191,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid white; /* Triangle pointing upwards */
+    border-top: 10px solid white;
 }
 
     </style>
@@ -365,13 +363,7 @@ if ($number_of_result > 0) {
 
 
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <?php include "partials/_footer.php" ?>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 

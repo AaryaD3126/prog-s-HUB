@@ -38,100 +38,7 @@ if ($result) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Chivo Mono', monospace;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-
-        }
-
-        .msgcontainer {
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll; 
-}
-
-.msgcontainer::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
-}
-        .main {
-            padding: 40px 20px;
-            background-color: #1a1a1a;
-            box-shadow:20px 27px 6px rgba(0, 0, 0, 0.5);
-            width: 80vw;
-            margin: 20px auto;
-        }
-
-        .container {
-            border: 2px solid #dedede;
-            background-color: #1a1a1a;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0px;
-            width: 80%!important;
-        }
-
-        .darker {
-            border-color: #ccc;
-            background-color: #333;
-        }
-
-        .container::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        .time-right {
-            float: right;
-            color: #007bff;
-        }
-
-        .msgcontainer {
-            height: 450px;
-            overflow-y: scroll;
-        }
-
-        #link {
-            width: 100%;
-            background-color: #1a1a1a;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-        #usermsg{
-            width: 60vw;
-        }
-        .input-box{
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            justify-content: center;
-        }
-        #submitmsg{
-            width: 20vw;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/rooms.css">
 </head>
 
 <body>
@@ -211,7 +118,6 @@ if ($result) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <br><br>
-    <?php include "partials/_footer.php" ?>
 </body>
 
 </html>

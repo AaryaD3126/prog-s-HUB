@@ -15,66 +15,7 @@ session_start();
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/901d7d049c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/index.css">
-  <style>
-    /* Additional CSS styles */
-
-    /* Back to top button */
-    #btn-back-to-top {
-      position: fixed;
-      bottom: 5%;
-      right: 5%;
-      background-color: blueviolet;
-      z-index: 100;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    #btn-back-to-top:hover {
-      background-color: darkviolet;
-    }
-
-    /* Card animation */
-    .fade-in {
-      opacity: 0;
-      animation: fadeInAnimation ease 1s forwards;
-    }
-
-    @keyframes fadeInAnimation {
-      0% {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Card styling */
-    .card {
-      background-color: #343a40;
-      color: #fff;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h5 {
-      color: #17a2b8;
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -124,7 +65,6 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
   <script>
-    // Smooth scroll to top
     document.getElementById('btn-back-to-top').addEventListener('click', function() {
       window.scrollTo({
         top: 0,
