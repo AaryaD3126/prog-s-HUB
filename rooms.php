@@ -45,6 +45,7 @@ if ($result) {
             color: #fff;
             margin: 0;
             padding: 0;
+
         }
 
         .msgcontainer {
@@ -57,13 +58,11 @@ if ($result) {
   display: none; /* for Chrome, Safari, and Opera */
 }
         .main {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-right: auto;
-            margin-left: auto;
             padding: 40px 20px;
             background-color: #1a1a1a;
             box-shadow:20px 27px 6px rgba(0, 0, 0, 0.5);
+            width: 80vw;
+            margin: 20px auto;
         }
 
         .container {
@@ -120,6 +119,18 @@ if ($result) {
         button:hover {
             background-color: #0056b3;
         }
+        #usermsg{
+            width: 60vw;
+        }
+        .input-box{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: center;
+        }
+        #submitmsg{
+            width: 20vw;
+        }
     </style>
 </head>
 
@@ -146,9 +157,10 @@ if ($result) {
 
             </div>
         </div>
-
+<div class="input-box">
         <input type="text" class="form-control" name="usermsg" id="usermsg" placeholder="Add message">
-        <button class="btn btn-secondary" style="margin-top: 9px;" name="submitmsg" id="submitmsg">Send</button>
+        <button class="btn btn-secondary" name="submitmsg" id="submitmsg">Send</button>
+    </div>
     </div>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
