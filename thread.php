@@ -82,6 +82,73 @@ session_start();
         .pagination-container {
             margin-top: 20px;
         }
+
+        .pagination {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background: linear-gradient(to right, #4CAF50, #008CBA); /* Gradient background */
+    padding: 10px;
+    border-radius: 20px; /* Rounded corners */
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background on hover */
+
+}
+
+
+
+.page-link:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.page-link.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background for active page */
+}
+
+/* Animation effect */
+.page-item {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Triangle effect */
+.triangle-pagination::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white; /* Triangle pointing upwards */
+}
+
     </style>
 </head>
 
@@ -182,17 +249,20 @@ session_start();
         }
         ?>
         <div class="pagination-container">
-            <?php
-            if ($number_of_result > 0) {
-                echo '<nav aria-label="...">
-                        <ul class="pagination pagination-lg">';
-                for ($page = 1; $page <= $number_of_page; $page++) {
-                    echo '<li class="page-item"><a class="page-link" href= "./thread.php?thread_id=' . $id . '&page=' . $page . '">' . $page . ' </a></li>';
-                }
-                echo '</ul>
-                    </nav>';
-            }
-            ?>
+        <?php
+if ($number_of_result > 0) {
+    echo '<nav aria-label="...">
+    <ul class="pagination pagination-lg triangle-pagination">';
+
+    for ($page = 1; $page <= $number_of_page; $page++) {
+        echo '<li class="page-item"><a class="page-link" href= "./thread_list.php?catid=' . $id . '&page=' . $page . '">' . $page . ' </a></li>';
+    }
+    
+    echo '</ul>
+    </nav>';
+}
+?>
+
         </div>
     </div>
 
