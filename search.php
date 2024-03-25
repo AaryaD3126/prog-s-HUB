@@ -33,29 +33,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <?php include "partials/_dbconnect.php" ?>
     <?php include "partials/_header.php" ?>
 
-    <!-- Search Results -->
     <div class="container my-3" id="maincontainer">
         <h1 class="py-3">Search results for <em>"<?php echo $search_query; ?>"
             </em></h1>
         <?php
          $results_per_page = 10;  
   
-         //find the total number of results stored in the database  
  $query = "SELECT * FROM threads WHERE MATCH(thread_subject, thread_desc) AGAINST ('$search_query')";
          $result2 = mysqli_query($connection, $query);  
          $number_of_result = mysqli_num_rows($result2);  
        
-         //determine the total number of pages available  
          $number_of_page = ceil ($number_of_result / $results_per_page);  
        
-         //determine which page number visitor is currently on  
          if (!isset ($_GET['page']) ) {  
              $page = 1;  
          } else {  
              $page = $_GET['page'];  
          }  
        
-         //determine the sql LIMIT starting number for the results on the displaying page  
          $page_first_result = ($page-1) * $results_per_page;
          $result_found = false;
 $sql = "SELECT * FROM threads WHERE thread_subject LIKE '%$search_query%' OR thread_desc LIKE '%$search_query%' LIMIT ". $page_first_result . ',' . $results_per_page;
@@ -64,7 +59,6 @@ $sql = "SELECT * FROM threads WHERE thread_subject LIKE '%$search_query%' OR thr
         while ($row = mysqli_fetch_array($result)) {
             $result_found = true;
         
-            //search results
             echo ' <div class="result mx-5">
     <h3><a href="./thread.php?thread_id=' . $row['thread_id'] . '" class="text-dark">' . $row['thread_subject'] . '</a> </h3>
     <p>' .  $row['thread_desc'] . '</p>
