@@ -1,6 +1,8 @@
 
 body {
     font-family: 'Chivo Mono', monospace;
+    background: linear-gradient(to bottom right, #2c2c2c, #343a40, #343a40, #2c2c2c);
+
 }
 
 .jumbotron-custom {

@@ -1,0 +1,42 @@
+/* Custom Button Styles */
+.btn-custom {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: neonEffect 1.5s infinite alternate;
+}
+
+.btn-custom:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-outline-primary {
+    border: 2px solid #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+@keyframes neonEffect {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #007bff, 0 0 35px #007bff, 0 0 40px #007bff, 0 0 50px #007bff, 0 0 75px #007bff;
+    }
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #007bff, 0 0 35px #007bff, 0 0 40px #007bff, 0 0 50px #007bff, 0 0 75px #007bff;
+    }
+}
+
+.navbar {
+    background: linear-gradient(to right, #f900e6, #00ff6c);
+}

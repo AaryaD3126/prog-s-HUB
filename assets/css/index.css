@@ -1,4 +1,13 @@
 
+body{
+  font-family: 'Chivo Mono', monospace;
+
+  background: linear-gradient(to bottom right, #2c2c2c, #343a40, #343a40, #2c2c2c);
+
+}
+h2{
+  color: white;
+}
 #btn-back-to-top {
     position: fixed;
     bottom: 5%;
@@ -37,7 +46,7 @@
     background-color: #343a40;
     width: 100%;
     color: #fff;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     border-radius: 10px;
     overflow: hidden;

@@ -36,7 +36,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <style>
         body {
             font-family: 'Chivo Mono', monospace;
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom right, #2c2c2c, #343a40, #343a40, #2c2c2c);
             color: #343a40;
         }
 
@@ -193,7 +193,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     border-right: 10px solid transparent;
     border-top: 10px solid white;
 }
-
+<?php include "assets/css/_header.css"; ?>
     </style>
 </head>
 

@@ -29,15 +29,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   <style>
     body{
                 font-family: 'Chivo Mono', monospace;
+                background: linear-gradient(to bottom right, #2c2c2c, #343a40, #343a40, #2c2c2c);
+
 
             }
+            <?php include "assets/css/_header.css"; ?>
   </style>
 </head>
 
 <body>
   <?php include "partials/_dbconnect.php" ?>
   <?php include "partials/_header.php" ?>
-<h1><center><b>Contact us</b></center></h1>
+<h1 style="color:white;margin-top:25px;"><center><b>Contact us</b></center></h1>
 <div style="padding:25px;border-radius:20px;" class="container my-4 bg-light">
 
   <form action="contact.php" method="post" id="contactForm">

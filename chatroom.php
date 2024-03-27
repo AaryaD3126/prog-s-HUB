@@ -20,14 +20,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <style>
         body {
             font-family: 'Chivo Mono', monospace;
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom right, #2c2c2c, #343a40, #343a40, #2c2c2c);
+            color:white;
         }
 
         .jumbotron-custom {
-            background-color: #007bff;
             color: #ffffff;
             border-radius: 15px;
-            padding: 40px;
+            padding: 20px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
@@ -58,20 +58,20 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         }
 
         .list-group-item-custom:hover {
-            background-color: #007bff;
             color: #ffffff;
         }
 
         .list-group-custom {
             border-radius: 10px;
         }
+        <?php include "assets/css/_header.css"; ?>
     </style>
 </head>
 
 <body>
     <?php include "partials/_header.php"; ?>
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-5 text-center bg-light">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-5 text-center">
         <div class="col-md-13 p-lg-5 mx-auto my-5">
             <h1 class="display-4 fw-normal">My Chat Room</h1>
             <div style="text-align: left;">
