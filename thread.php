@@ -41,6 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['loggedin']) && $_SE
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/901d7d049c.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="assets/css/thread.css">
     <style>
   <?php include "assets/css/_header.css"; ?>
@@ -77,6 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['loggedin']) && $_SE
             <div class="comment-header">
                 <?php if ($threadUserImg): ?>
                     <img src="<?php echo $threadUserImg; ?>" alt="User Image">
+            
                 <?php endif; ?>
                 <h5>Posted By: <b><?php echo $threadUser; ?></b></h5>
             </div>
@@ -103,6 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['loggedin']) && $_SE
     </div>
 
     <div class="container comment-container">
+        
         <h1 class="py-4">Browse Comments</h1>
         <?PHP
         $results_per_page = 10;
@@ -115,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['loggedin']) && $_SE
         } else {
             $page = $_GET['page'];
         }
-        $page_first_result = ($page - 1) * $results_per_page;
+        $page_first_result = ($page - 1) * $result_per_page;
         $sql = "SELECT * FROM `comments` WHERE thread_id=$id LIMIT " . $page_first_result . ',' . $results_per_page;
         $result = mysqli_query($connection, $sql);
         $noResult = true;
@@ -146,7 +150,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['loggedin']) && $_SE
         <div class="pagination-container">
         <?php
 if ($number_of_result > 0) {
-    echo '<nav aria-label="...">
+    echo '<nav class="res-pagination"  aria-label="...">
+    <div class="goleft">
+    <i class="fa-solid fa-caret-left fa-bounce"></i>
+    </div>
     <ul class="pagination pagination-lg triangle-pagination">';
 
     for ($page = 1; $page <= $number_of_page; $page++) {
@@ -154,6 +161,9 @@ if ($number_of_result > 0) {
     }
     
     echo '</ul>
+    <div class="goright">
+    <i class="fa-solid fa-caret-right fa-bounce"></i>
+    </div>
     </nav>';
 }
 ?>
@@ -165,6 +175,8 @@ if ($number_of_result > 0) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
+        <script src="assets/js/pagination.js"></script>
+
 </body>
 
 </html>

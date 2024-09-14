@@ -24,11 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             </ul>
             <form action="./search.php" method="get" class="d-flex" role="search">
                 <input class="form-control me-2" name="search" type="search" placeholder="Search a thread" aria-label="Search a thread">
-                <button class="btn-custom btn-primary me-2" type="submit"><div style="-webkit-transform: rotate(45deg); 
-               -moz-transform: rotate(45deg); 
-                 -o-transform: rotate(45deg);
-                    transform: rotate(45deg);">
-⚲ 
+                <button class="btn-custom btn-primary me-2" type="submit"><div>
+<i class="fa-solid fa-magnifying-glass fa-beat-fade"></i>
 </div></button>
             </form>
             <?php
@@ -39,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                 } else {
                     echo '
                         <form action="upload.php" method="post" enctype="multipart/form-data">
-                            <button type="submit" class="btn-custom btn-outline-light me-2" style="border-radius: 50px; width: 40px; height: 40px;">+</button>
+                            <button type="submit" class="btn-custom btn-outline-light" style="border-radius: 50px; width: fit-content; height:fit-content;background-color:#007bff;"><i class="fa-solid fa-plus fa-beat" style="color: #ffffff;"></i></button>
                         </form>';
                 }
                 echo '<p style="font-size: 16px; color: white;" class="mx-2 my-1">' . $_SESSION["username"] . '</p>';

@@ -17,6 +17,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/901d7d049c.js" crossorigin="anonymous"></script>
+
     <style>
         body {
             font-family: 'Chivo Mono', monospace;

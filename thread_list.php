@@ -32,168 +32,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/901d7d049c.js" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/thread_list.css">
     <style>
-        body {
-            font-family: 'Chivo Mono', monospace;
-            background: linear-gradient(to bottom right, #2c2c2c, #343a40, #343a40, #2c2c2c);
-            color: #343a40;
-        }
+       
 
-        .jumbotron {
-            border-radius: 20px;
-            background: #dee2e6;
-            padding: 40px;
-        }
-
-        .lead {
-            font-size: 24px;
-        }
-
-        ol {
-            font-size: 18px;
-        }
-
-        .container.my-4 {
-            border-radius: 20px;
-        }
-
-        .form-control,
-        .btn-success {
-            font-family: 'Chivo Mono', monospace;
-            font-size: 18px;
-        }
-
-        .py-4 {
-            color: #343a40;
-        }
-
-        .media {
-            border: 1px solid #adb5bd;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: #fff;
-        }
-
-        .page-link {
-            color: #343a40;
-        }
-
-        .page-item.active .page-link {
-            background-color: #343a40;
-            border-color: #343a40;
-        }
-
-        .btn-outline-secondary {
-            color: #343a40;
-            border-color: #343a40;
-        }
-
-        .btn-outline-secondary:hover {
-            background-color: #343a40;
-            color: #fff;
-        }
-
-        .footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        .jumbotron-custom {
-            background-color: #343a40;
-            color: #fff;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .jumbotron-custom h1,
-        .jumbotron-custom h5 {
-            color: #17a2b8;
-        }
-
-        .jumbotron-custom p {
-            font-size: 18px;
-        }
-
-        .rules {
-            margin-top: 20px;
-        }
-
-        .rules ol {
-            padding-left: 20px;
-        }
-
-        .rules ol li {
-            font-size: 16px;
-        }
-        .pagination {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    background: linear-gradient(to right, #4CAF50, #008CBA);
-    padding: 10px;
-    border-radius: 20px;
-}
-
-.page-item {
-    margin: 0 5px;
-}
-
-.page-link {
-    padding: 8px 16px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.2); 
-
-}
-
-
-
-.page-link:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.page-link.active {
-    background-color: rgba(255, 255, 255, 0.2); 
-}
-
-.page-item {
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.triangle-pagination::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid white;
-}
-<?php include "assets/css/_header.css"; ?>
+        <?php include "assets/css/_header.css"; ?>
     </style>
 </head>
 
@@ -348,23 +194,30 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
         <?php
-if ($number_of_result > 0) {
-    echo '<nav aria-label="...">
+        if ($number_of_result > 0) {
+            echo '<nav class="res-pagination" aria-label="...">
+            <div class="goleft">
+    <i class="fa-solid fa-caret-left fa-bounce"></i>
+    </div>
     <ul class="pagination pagination-lg triangle-pagination">';
 
-    for ($page = 1; $page <= $number_of_page; $page++) {
-        echo '<li class="page-item"><a class="page-link" href= "./thread_list.php?catid=' . $id . '&page=' . $page . '">' . $page . ' </a></li>';
-    }
-    
-    echo '</ul>
+            for ($page = 1; $page <= $number_of_page; $page++) {
+                echo '<li class="page-item"><a class="page-link" href= "./thread_list.php?catid=' . $id . '&page=' . $page . '">' . $page . ' </a></li>';
+            }
+
+            echo '</ul>
+            <div class="goright">
+    <i class="fa-solid fa-caret-right fa-bounce"></i>
+    </div>
     </nav>';
-}
-?>
+        }
+        ?>
 
 
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="assets/js/pagination.js"></script>
 </body>
 
 </html>

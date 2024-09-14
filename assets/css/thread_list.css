@@ -1,0 +1,161 @@
+body {
+    font-family: 'Chivo Mono', monospace;
+    background: linear-gradient(to bottom right, #2c2c2c, #343a40, #343a40, #2c2c2c);
+    color: #343a40;
+}
+
+.jumbotron {
+    border-radius: 20px;
+    background: #dee2e6;
+    padding: 40px;
+}
+
+.lead {
+    font-size: 24px;
+}
+
+ol {
+    font-size: 18px;
+}
+
+.container.my-4 {
+    border-radius: 20px;
+}
+
+.form-control,
+.btn-success {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 18px;
+}
+
+.py-4 {
+    color: #343a40;
+}
+
+.media {
+    border: 1px solid #adb5bd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.page-link {
+    color: #343a40;
+}
+
+.page-item.active .page-link {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-outline-secondary {
+    color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.jumbotron-custom {
+    background-color: #343a40;
+    color: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.jumbotron-custom h1,
+.jumbotron-custom h5 {
+    color: #17a2b8;
+}
+
+.jumbotron-custom p {
+    font-size: 18px;
+}
+
+.rules {
+    margin-top: 20px;
+}
+
+.rules ol {
+    padding-left: 20px;
+}
+
+.rules ol li {
+    font-size: 16px;
+}
+.res-pagination{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ gap: 8px;
+ color: white;
+ font-size: 28px;
+}
+.pagination {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    overflow-x: auto;
+    background: linear-gradient(to right, #4CAF50, #008CBA); 
+    padding: 10px 20px;
+    border-radius: 20px; 
+    -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .pagination::-webkit-scrollbar {
+        display: none;
+      }
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+
+}
+
+
+
+.page-link:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.page-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.page-item {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
